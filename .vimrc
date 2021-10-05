@@ -34,13 +34,13 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
 " Tools
-Plug 'LumaKernel/fern-mapping-fzf.vim', Cond(executable('fzf'))
 Plug 'christoomey/vim-tmux-navigator', Cond(executable('tmux'))
 Plug 'lambdalisue/fern-git-status.vim', Cond(executable('git'))
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 Plug 'lambdalisue/nerdfont.vim'
+Plug 'LumaKernel/fern-mapping-fzf.vim', Cond(executable('fzf'))
 Plug 'tpope/vim-obsession'
 " Snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -87,7 +87,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 " Fern
-nmap f :Fern .<CR>
+nmap <C-O> :Fern .<CR>
 " paste toggle
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
