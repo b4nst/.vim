@@ -24,29 +24,27 @@ endfunction
 
 call plug#begin('~/.vim/pack/vim-plug')
 
-" LSP client, autocompletion
-Plug 'dense-analysis/ale'
-Plug 'lifepillar/vim-mucomplete'
-
 " Moves
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
-" Tools
-Plug 'christoomey/vim-tmux-navigator', Cond(executable('tmux'))
+" Git
 Plug 'lambdalisue/fern-git-status.vim', Cond(executable('git'))
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+
+" File explorer / Panel navigation
 Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/glyph-palette.vim'
-Plug 'lambdalisue/nerdfont.vim'
+Plug 'christoomey/vim-tmux-navigator', Cond(executable('tmux'))
 Plug 'LumaKernel/fern-mapping-fzf.vim', Cond(executable('fzf'))
-Plug 'tpope/vim-obsession'
+
 " Snippets
-Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
+
+" LSP client, autocompletion
+Plug 'dense-analysis/ale'
+Plug 'lifepillar/vim-mucomplete'
 
 " Languages
 Plug 'blankname/vim-fish'
@@ -56,6 +54,14 @@ Plug 'hashivim/vim-terraform'
 Plug 'jjo/vim-cue'
 Plug 'nathanielc/vim-tickscript'
 Plug 'towolf/vim-helm'
+
+" Misc
+Plug 'lambdalisue/glyph-palette.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'tpope/vim-obsession'
+" required for snipmate
+Plug 'MarcWeber/vim-addon-mw-utils'
 
 call plug#end()
 
