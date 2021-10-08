@@ -34,8 +34,10 @@ Plug 'lambdalisue/fern-git-status.vim', Cond(executable('git'))
 
 " File explorer / Panel navigation
 Plug 'lambdalisue/fern.vim'
-Plug 'christoomey/vim-tmux-navigator', Cond(executable('tmux'))
-Plug 'LumaKernel/fern-mapping-fzf.vim', Cond(executable('fzf'))
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'LumaKernel/fern-mapping-fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Snippets
 Plug 'tomtom/tlib_vim'
@@ -93,7 +95,14 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 " Fern
-nmap <C-O> :Fern .<CR>
+nmap <C-T> :Fern .<CR>
+" Fuzzy
+nmap ff :Files <CR>
+nmap fg :GFiles <CR>
+nmap fb :Buffers <CR>
+nmap fc :Commits <CR>
+" Ale
+nmap gd "ALEGoToDefinition <CR>
 " paste toggle
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
@@ -133,7 +142,6 @@ function! s:init_fern() abort
   nmap <buffer><nowait> l <Plug>(fern-my-expand-or-collapse)
   nmap <buffer><nowait> <C-h> <Plug>(fern-action-hidden)
   nmap <buffer><nowait> <CR> <Plug>(fern-my-open-or-expand)
-  nmap <buffer> F <Plug>(fern-action-fzf-files)
 endfunction
 
 augroup fern-custom
@@ -160,6 +168,7 @@ let g:ale_lint_on_enter          = 0
 let g:ale_lint_on_text_changed   = 0
 let g:ale_lint_on_save           = 1
 let g:ale_fix_on_save            = 1
+let g:ale_default_navigation     = 'split'
 
 let g:ale_linters = {
       \ 'dockerfile': ['dockerfile_lint'],
